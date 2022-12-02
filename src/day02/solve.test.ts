@@ -136,14 +136,64 @@ describe('day 02', () => {
       lines = input.split('\n');
     });
 
-    it('solves the first problem', () => {
-      const result = solve1(lines);
-      console.log('First solution:', result);
+    describe('original', () => {
+      it('solves the first problem', () => {
+        const result = solve1(lines);
+        console.log('First solution:', result);
+      });
+
+      it('solves the second problem', () => {
+        const result = solve2(lines);
+        console.log('Second solution:', result);
+      });
     });
 
-    it('solves the second problem', () => {
-      const result = solve2(lines);
-      console.log('Second solution:', result);
+    describe('refactored', () => {
+      const scoreMapping = {
+        'A X': 1 + 3,
+        'A Y': 2 + 6,
+        'A Z': 3 + 0,
+        'B X': 1 + 0,
+        'B Y': 2 + 3,
+        'B Z': 3 + 6,
+        'C X': 1 + 6,
+        'C Y': 2 + 0,
+        'C Z': 3 + 3,
+      };
+
+      it('solves the first problem', () => {
+        const result = lines.reduce((score, line) => {
+          if (!line) {
+            return score;
+          }
+
+          return score + scoreMapping[line];
+        }, 0);
+        console.log('First solution:', result);
+      });
+
+      it('solves the second problem', () => {
+        const todoToActionMapping = {
+          'A X': 'A Z',
+          'A Y': 'A X',
+          'A Z': 'A Y',
+          'B X': 'B X',
+          'B Y': 'B Y',
+          'B Z': 'B Z',
+          'C X': 'C Y',
+          'C Y': 'C Z',
+          'C Z': 'C X',
+        };
+
+        const result = lines.reduce((score, line) => {
+          if (!line) {
+            return score;
+          }
+
+          return score + scoreMapping[todoToActionMapping[line]];
+        }, 0);
+        console.log('Second solution:', result);
+      });
     });
   });
 });

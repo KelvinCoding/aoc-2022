@@ -1,39 +1,39 @@
 {
-    "compilerOptions": {
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
-        "declaration": true,
-        "removeComments": true,
-        "resolveJsonModule": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "target": "esnext",
-        "lib": [
-            "ES2017",
-            "ES2021",
-            "ES2020",
-            "ES2019"
-        ],
-        "inlineSourceMap": true,
-        "outDir": "./dist",
-        "baseUrl": "./",
-        "paths": {
-            "~/*": [
-                "src/*"
-            ]
-        },
-        "checkJs": false,
-        "noImplicitAny": false,
-        "esModuleInterop": true
-    },
-    "include": [
-        "src"
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "declaration": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "lib": [
+      "ES2017",
+      "ES2021",
+      "ES2020",
+      "ES2019"
     ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "dist",
-        "<node_internals>/**"
-    ]
+    "inlineSourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "checkJs": false,
+    "noImplicitAny": false,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "<node_internals>/**"
+  ]
 }

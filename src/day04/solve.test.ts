@@ -33,12 +33,11 @@ function solve2(lines: string[]) {
       .split(',')
       .map((str) => str.split('-').map((s) => parseInt(s, 10)));
 
-    const isBIntersectingA =
-      (aStart <= bStart || bEnd <= aEnd) && !(bEnd < aStart || bStart > aEnd);
-    const isAIntersectingB =
-      (bStart <= aStart || aEnd <= bEnd) && !(aEnd < bStart || aStart > bEnd);
+    const hasIntersection =
+      (aStart >= bStart && aStart <= bEnd) ||
+      (bStart >= aStart && bStart <= aEnd);
 
-    if (isBIntersectingA || isAIntersectingB) {
+    if (hasIntersection) {
       return acc + 1;
     }
 
@@ -46,7 +45,7 @@ function solve2(lines: string[]) {
   }, 0);
 }
 
-describe.only('day 04', () => {
+describe('day 04', () => {
   describe('test input', () => {
     let lines: string[];
 

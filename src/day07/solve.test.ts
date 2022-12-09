@@ -57,7 +57,8 @@ function parseInput(input: string): Dir {
             size: 0,
           };
         } else {
-          currentDir.files[fileOrDirName] = parseInt(dirOrSize, 10);
+          currentDir.files[fileOrDirName] =
+            (currentDir.files[fileOrDirName] ?? 0) + parseInt(dirOrSize, 10);
         }
         pos += 1;
         lsOutput = allLines[pos];

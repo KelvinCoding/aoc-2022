@@ -179,7 +179,7 @@ function solve2(inputData: ParsedInput) {
   return max1 * max2;
 }
 
-describe.only('day 11', () => {
+describe('day 11', () => {
   describe('test input', () => {
     let inputData: ParsedInput;
 
